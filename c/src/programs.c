@@ -8,8 +8,8 @@
 #include <string.h>
 #include "programs.h"
 
-char * help(arg){
-	char out[100];
+char * help(arg, len){
+	char out[];
 	if(arg == 1){
 		strcpy(out, "Got a 1.\n");;
 	}

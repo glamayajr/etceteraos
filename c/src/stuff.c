@@ -43,6 +43,23 @@ int main(void){
 	}
 
 	printf("The sum is %d\n", add2(nums[0],nums[1]));
+	lua_State *L;
+	L = luaL_newstate();
+	luaL_openlibs(L);
+	luaL_loadfile(L, "programs.lua");
+	lua_pcall(
+		L,
+		number_of_args,
+		number_of_returns,
+		errfunc_idx
+		);
+	lua_pcall(
+		L,
+		number_of_args,
+		number_of_returns,
+		errfunc_idx
+		);
+	lua_close(L);
 	printf("Press any key to exit...");
 
 	getch();
